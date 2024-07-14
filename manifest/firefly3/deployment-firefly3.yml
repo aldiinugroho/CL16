@@ -27,7 +27,7 @@ spec:
         - name: DB_CONNECTION
           value: mysql
         - name: DB_HOST
-          value: '10.100.255.178'
+          value: '10.96.86.247'
         - name: DB_PORT
           value: '3306'
         - name: DB_DATABASE
