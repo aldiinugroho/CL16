@@ -14,3 +14,5 @@
 - run "minikube ssh"
 // METHOD: port-forward argocd
 - run "kubectl port-forward svc/argocd-server -n argocd 8080:443"
+// METHOD: port-forward firefly3
+- run "kubectl port-forward svc/service-firefly3 -n cl16 8081:8080"
