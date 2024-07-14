@@ -4,7 +4,7 @@ metadata:
   name: service-mysql
   namespace: cl16
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: mysql
   ports:
