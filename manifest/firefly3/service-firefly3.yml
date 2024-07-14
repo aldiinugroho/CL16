@@ -4,7 +4,7 @@ metadata:
   name: service-firefly3
   namespace: cl16
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: firefly3
   ports:
