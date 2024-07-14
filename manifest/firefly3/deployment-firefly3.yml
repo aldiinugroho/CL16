@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-firefly3
+  namespace: cl16
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firefly3
+  template:
+    metadata:
+      labels:
+        app: firefly3
+    spec:
+      containers:
+      - name: firefly3
+        image: fireflyiii/core:latest
+        ports:
+        - containerPort: 8080
+          name: firefly3
+        env:
+        - name: APP_ENV
+          value: local
+        - name: APP_KEY
+          value: mkvdwtxkztizgwkwmkzljmjnqnyrgomv
+        - name: DB_CONNECTION
+          value: mysql
+        - name: DB_HOST
+          value: '10.100.255.178'
+        - name: DB_PORT
+          value: '3306'
+        - name: DB_DATABASE
+          value: sample
+        - name: DB_USERNAME
+          value: root
+        - name: DB_PASSWORD
+          value: ladangsemut16
+        - name: TRUSTED_PROXIES
+          value: '**'
+        volumeMounts:
+        - mountPath: "/var/www/html/storage/upload"
+          name: firefly-iii-upload 
+        imagePullPolicy: Always
+      volumes:
+        - name: firefly-iii-upload
+          persistentVolumeClaim:
+            claimName: pvc-firefly3

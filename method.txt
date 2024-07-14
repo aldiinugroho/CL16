@@ -1,0 +1,16 @@
+// METHOD: docker engine 
+- run "docker by the app"
+// METHOD: minikube engine to start kubernates in macOs
+- run "mikikube start"
+// METHOD: get namespace list 
+- run "kubectl get ns"
+// METHOD: open kubernates dashboard
+- run "minikube dashboard"
+// METHOD: seal env with base64
+- run "echo -n 'samplevalue' | base64"
+// METHOD: port-forward mysql
+- run "kubectl port-forward svc/service-mysql -n cl16 3306:3306"
+// METHOD: get into minikube ssh
+- run "minikube ssh"
+// METHOD: port-forward argocd
+- run "kubectl port-forward svc/argocd-server -n argocd 8080:443"
